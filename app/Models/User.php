@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -17,9 +18,23 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        "id",
+        "name",
+        "email",
+        "password_hash",
+        "password_plain",
+        "superadmin",
+        "shop_name",
+        "remember_token",
+        "created_at",
+        "updated_at",
+        "card_brand",
+        "card_last_four",
+        "trial_ends_at",
+        "shop_domain",
+        "is_enabled",
+        "billing_plan",
+        "trial_starts_at"
     ];
 
     /**
@@ -28,16 +43,27 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
+        "password_hash",
+        "password_plain",
         'remember_token',
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * fetch the pass hash for auth
      *
-     * @var array
+     * @return void
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function getAuthPassword(){
+        return $this->password_hash;
+    }
+
+    /**
+     * the users products
+     *
+     * @return HasMany
+     */
+    public function products() : HasMany
+    {
+        return $this->hasMany(Products::class);
+    }
 }
