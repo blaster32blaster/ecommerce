@@ -2,10 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\DashboardService;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    /**
+     * a dashboard service instance
+     *
+     * @var DashboardService $dashboardService
+     */
+    private $dashboardService;
+
+    public function __construct(DashboardService $dashboardService)
+    {
+        $this->dashboardService = $dashboardService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +26,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return $this->dashboardService->userDashboard();
     }
 
     /**

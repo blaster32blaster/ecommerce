@@ -17,6 +17,9 @@ class SeedOrderData extends Seeder
      */
     public function run()
     {
+        if (Order::all()->count() > 0) {
+            return;
+        }
 
         $file = storage_path('data/orders.csv');
         $orderArr = $this->convert($file);

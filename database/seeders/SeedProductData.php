@@ -17,6 +17,9 @@ class SeedProductData extends Seeder
      */
     public function run()
     {
+        if (Products::all()->count() > 0) {
+            return;
+        }
 
         $file = storage_path('data/products.csv');
         $productArr = $this->convert($file);

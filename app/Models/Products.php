@@ -67,6 +67,6 @@ class Products extends Model
      */
     public function admin() : BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id', 'admin_id');
     }
 }

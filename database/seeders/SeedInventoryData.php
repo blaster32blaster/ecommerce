@@ -17,6 +17,9 @@ class SeedInventoryData extends Seeder
      */
     public function run()
     {
+        if (Inventory::all()->count() > 0) {
+            return;
+        }
 
         $file = storage_path('data/inventory.csv');
         $inventoryArr = $this->convert($file);

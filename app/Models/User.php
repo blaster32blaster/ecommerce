@@ -64,6 +64,6 @@ class User extends Authenticatable
      */
     public function products() : HasMany
     {
-        return $this->hasMany(Products::class);
+        return $this->hasMany(Products::class, 'admin_id', 'id');
     }
 }

@@ -17,6 +17,9 @@ class SeedUserData extends Seeder
      */
     public function run()
     {
+        if (User::all()->count() > 0) {
+            return;
+        }
 
         $file = storage_path('data/users.csv');
         $userArr = $this->convert($file);
