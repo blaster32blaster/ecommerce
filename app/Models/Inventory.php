@@ -47,7 +47,7 @@ class Inventory extends Model
      *
      * @return BelongsTo
      */
-    public function Product() : BelongsTo
+    public function product() : BelongsTo
     {
         return $this->belongsTo(Products::class);
     }

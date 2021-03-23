@@ -23,8 +23,5 @@ Route::resource('dashboard', App\Http\Controllers\DashboardController::class)
     ->middleware(['auth'])
     ->name('index', 'dashboard');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

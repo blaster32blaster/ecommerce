@@ -1,0 +1,124 @@
+.product {
+    display: flex!important;
+    flex-direction: column!important;
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important;
+    padding: .5rem!important;
+}
+
+.product-label {
+    font-weight: 800;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.product-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid grey!important;
+    border-bottom: 1px solid grey!important;
+}
+
+.product-operations {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.product-operations {
+    max-height: 2rem;
+}
+
+//inventory
+.inventory {
+    display: flex!important;
+    flex-direction: column!important;
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important;
+    padding: .5rem!important;
+}
+
+.inventory-label {
+    font-weight: 800;
+}
+
+.inventory-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.inventory-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid grey!important;
+    border-bottom: 1px solid grey!important;
+}
+
+.inventory-operations {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    max-height: 2rem;
+}
+
+.edit-icon {
+    color:$blue;
+}
+
+.edit-icon:hover {
+    color:$cyan;
+    cursor: pointer;
+}
+
+.delete-icon {
+    color:$red;
+}
+
+.delete-icon:hover {
+    color:$orange;
+    cursor: pointer;
+}
+
+
+.save-icon {
+    color:$teal;
+}
+
+.save-icon:hover {
+    color:$green;
+    cursor: pointer;
+}
+
+.cancel-icon {
+    color:$orange;
+}
+
+.cancel-icon:hover {
+    color:$yellow;
+    cursor: pointer;
+}
+
+.user-inventory-button {
+    background-color: $purple;
+    color: whitesmoke;
+    padding: .75rem;
+}
+
+.user-inventory-button:hover {
+    background-color: $indigo;
+}
+
+.user-inventory-cancel-button {
+    background-color: $red;
+    color: whitesmoke;
+    padding: .75rem;
+}
+
+.user-inventory-cancel-button:hover {
+    background-color: $pink;
+}

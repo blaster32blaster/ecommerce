@@ -15,9 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('product_id')->constrained('products')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('inventory_id');
-            $table->foreign('inventory_id')->references('id')->on('inventories');
+            $table->foreign('inventory_id')->references('id')->on('inventories')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('street_address');
             $table->string('apartment')->nullable();
             $table->string('city');
