@@ -16,8 +16,6 @@ the objective of this application is to be able to allow ecommerce users to be a
 ## Use of Application
 
 - navigate to localhost:8076
-- navigate to a client page, or to add client cash flows
-- if on cash flows, add date and new percentage value to update selected cash flow
   
 ## FAQ
 
